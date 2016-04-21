@@ -1,0 +1,2 @@
+<%= will_paginate @deployments if Refinery::Deployments::Admin::DeploymentsController.pageable? %>
+<%= render 'sortable_list' %>

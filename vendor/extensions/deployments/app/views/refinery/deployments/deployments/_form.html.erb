@@ -1,0 +1,116 @@
+<style>
+section {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+</style>
+
+
+<div class="container" >
+<div class="row">
+  <div class="span6 offset3">
+
+<%= form_for [refinery, :deployments, @deployment] do |f| %>
+  <%= render '/refinery/admin/error_messages',
+              :object => @deployment,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :repo_url %>
+    <%= f.text_field :repo_url%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :name_of_host_for_deploy -%>
+    <%= f.text_field :name_of_host -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :ssh_port -%>
+    <%= f.text_field :ssh_port -%>
+  </div>
+
+  <div class='field'>
+
+     <%= f.label "Gemset (optional)" -%>
+     <%= f.text_field :gemset -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :name_of_user -%>
+    <%= f.text_field :name_of_user -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :user_password -%>
+    <%= f.text_field :user_password -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :name_of_application -%>
+    <%= f.text_field :name_of_application -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :path_for_deploy -%>
+    <%= f.text_field :path_for_deploy -%>
+  </div>
+
+  <!--<div class='field'>-->
+    <!--<%#= f.label :unicorn_or_puma -%>-->
+    <!--<%#= f.text_field :unicorn_or_puma -%>-->
+  <!--</div>-->
+
+  <!--<div class='field'>-->
+    <!--<%#= f.label :capistrano_or_mina -%>-->
+    <!--<%#= f.text_field :capistrano_or_mina -%>-->
+  <!--</div>-->
+-------------------------------------------------------------------
+
+   <div class="chouse_server">
+    <span class='label_with_help'>
+      <%= f.label :unicorn_or_puma, 'Chouse server' %>
+    </span>
+      <div class="maxl">
+        <label class="radio inline">
+          <%= f.radio_button :unicorn_or_puma, 'unicorn' %>
+          <span> Unicorn </span>
+        </label>
+        <label class="radio inline">
+          <%= f.radio_button :unicorn_or_puma,'puma' %>
+          <span> Puma </span>
+        </label>
+      </div>
+    </div>
+
+-------------------------------------------------------------------
+
+    <div class="chouse_deploy">
+    <span class='label_with_help'>
+      <%= f.label :capistrano_or_mina, 'Chouse deploy system' %>
+    </span>
+      <div class="maxl">
+        <label class="radio inline">
+          <%= f.radio_button :capistrano_or_mina, 'capistrano' %>
+          <span> Capistrano </span>
+        </label>
+        <label class="radio inline">
+          <%= f.radio_button :capistrano_or_mina,'mina' %>
+          <span> Mina </span>
+        </label>
+      </div>
+    </div>
+------------------------------------------------------------------
+   <div>
+    <%= f.submit 'Create deploy setups', class: 'btn btn-large btn-primary' %>
+</div>
+
+<% end -%>
+</div>
+ </div>
+</div>

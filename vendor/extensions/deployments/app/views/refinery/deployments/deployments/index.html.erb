@@ -1,0 +1,18 @@
+<% content_for :body do %>
+
+    <%= link_to 'Create deployments', refinery.new_deployments_deployment_path %>
+
+
+
+
+
+  <ul id="deployments">
+    <% @deployments.each do |deployment| %>
+      <li>
+        <%= link_to deployment.title, refinery.deployments_deployment_path(deployment) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

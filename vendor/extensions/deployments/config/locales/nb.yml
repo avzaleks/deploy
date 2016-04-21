@@ -1,0 +1,34 @@
+nb:
+  refinery:
+    plugins:
+      deployments:
+        title: Deployments
+    deployments:
+      admin:
+        deployments:
+          actions:
+            create_new: Lag en ny Deployment
+            reorder: Endre rekkefølgen på Deployments
+            reorder_done: Ferdig å endre rekkefølgen Deployments
+          records:
+            title: Deployments
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Deployments enda. Klikk på "Lag en ny Deployment" for å legge til din første deployment.
+          deployment:
+            view_live_html: Vis hvordan denne deployment ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne deployment
+            delete: Fjern denne deployment permanent
+      deployments:
+        show:
+          other: Andre Deployments
+  activerecord:
+    attributes:
+      'refinery/deployments/deployment':
+        name_of_host: Name Of Host
+        ssh_port: Ssh Port
+        name_of_user: Name Of User
+        user_password: User Password
+        name_of_application: Name Of Application
+        path_for_deploy: Path For Deploy
+        unicorn_or_puma: Unicorn Or Puma
+        capistrano_or_mina: Capistrano Or Mina

@@ -1,0 +1,34 @@
+nl:
+  refinery:
+    plugins:
+      deployments:
+        title: Deployments
+    deployments:
+      admin:
+        deployments:
+          actions:
+            create_new: Nieuwe Deployment toevoegen
+            reorder: De volgorde van de Deployments wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Deployment-volgorde
+          records:
+            title: Deployments
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Deployments. Druk op 'Nieuwe Deployment toevoegen' om de eerste toe te voegen.
+          deployment:
+            view_live_html: Deze deployment op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze deployment
+            delete: Deze deployment definitief verwijderen
+      deployments:
+        show:
+          other: Andere Deployments
+  activerecord:
+    attributes:
+      'refinery/deployments/deployment':
+        name_of_host: Name Of Host
+        ssh_port: Ssh Port
+        name_of_user: Name Of User
+        user_password: User Password
+        name_of_application: Name Of Application
+        path_for_deploy: Path For Deploy
+        unicorn_or_puma: Unicorn Or Puma
+        capistrano_or_mina: Capistrano Or Mina

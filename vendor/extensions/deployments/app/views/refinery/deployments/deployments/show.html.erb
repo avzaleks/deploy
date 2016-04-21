@@ -1,0 +1,77 @@
+<% content_for :body_content_title do %>
+  <%= @deployment.title %>
+<% end %>
+
+<% content_for :body do %>
+    <section>
+      <h1>Repo Url</h1>
+      <p>
+        <%=raw @deployment.repo_url %>
+      </p>
+    </section>
+
+
+   <section>
+    <h1>Name Of Host</h1>
+    <p>
+      <%=raw @deployment.name_of_host %>
+    </p>
+  </section>
+  <section>
+    <h1>Ssh Port</h1>
+    <p>
+      <%=raw @deployment.ssh_port %>
+    </p>
+  </section>
+  <section>
+    <h1>Name Of User</h1>
+    <p>
+      <%=raw @deployment.name_of_user %>
+    </p>
+  </section>
+  <section>
+    <h1>User Password</h1>
+    <p>
+      <%=raw @deployment.user_password %>
+    </p>
+  </section>
+  <section>
+    <h1>Name Of Application</h1>
+    <p>
+      <%=raw @deployment.name_of_application %>
+    </p>
+  </section>
+  <section>
+    <h1>Path For Deploy</h1>
+    <p>
+      <%=raw @deployment.path_for_deploy %>
+    </p>
+  </section>
+  <section>
+    <h1>Unicorn Or Puma</h1>
+    <p>
+      <%=raw @deployment.unicorn_or_puma %>
+    </p>
+  </section>
+  <section>
+    <h1>Capistrano Or Mina</h1>
+    <p>
+      <%=raw @deployment.capistrano_or_mina %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="deployments">
+      <% @deployments.each do |deployment| %>
+        <li>
+          <%= link_to deployment.name_of_host, refinery.deployments_deployment_path(deployment) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,34 @@
+sk:
+  refinery:
+    plugins:
+      deployments:
+        title: Deployments
+    deployments:
+      admin:
+        deployments:
+          actions:
+            create_new: Pridať Deployment
+            reorder: Preusporiadať Deployments
+            reorder_done: Koniec radenia Deployments
+          records:
+            title: Deployments
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Deployments. Kliknite na "Pridať Deployment" pre pridanie prvého deployment.
+          deployment:
+            view_live_html: Zobraziť náhľad deployment<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť deployment
+            delete: Zmazať deployment
+      deployments:
+        show:
+          other: Daľšie Deployments
+  activerecord:
+    attributes:
+      'refinery/deployments/deployment':
+        name_of_host: Name Of Host
+        ssh_port: Ssh Port
+        name_of_user: Name Of User
+        user_password: User Password
+        name_of_application: Name Of Application
+        path_for_deploy: Path For Deploy
+        unicorn_or_puma: Unicorn Or Puma
+        capistrano_or_mina: Capistrano Or Mina

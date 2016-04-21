@@ -1,0 +1,35 @@
+es:
+  refinery:
+    plugins:
+      deployments:
+        title: Deployments
+#        article: masculino/femenino
+    deployments:
+      admin:
+        deployments:
+          actions:
+            create_new: Crear nuevo deployment
+            reorder: Reordenar deployments
+            reorder_done: Reordenación de deployments completada
+          records:
+            title: Deployments
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay deployments todavía. Pulsa en "Crear nuevo Deployment" para crear tu primer deployment.
+          deployment:
+            view_live_html: Ver este deployment como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este deployment
+            delete: Borrar este deployment para siempre
+      deployments:
+        show:
+          other: Otros deployments
+  activerecord:
+    attributes:
+      'refinery/deployments/deployment':
+        name_of_host: Name Of Host
+        ssh_port: Ssh Port
+        name_of_user: Name Of User
+        user_password: User Password
+        name_of_application: Name Of Application
+        path_for_deploy: Path For Deploy
+        unicorn_or_puma: Unicorn Or Puma
+        capistrano_or_mina: Capistrano Or Mina

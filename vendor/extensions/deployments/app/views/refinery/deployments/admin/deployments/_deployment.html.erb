@@ -1,0 +1,15 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(deployment) -%>">
+  <span class='title'>
+    <%= deployment.name_of_host %>
+  </span>
+
+  <span class='preview'></span>
+
+  <span class='actions'>
+    <%= action_icon(:preview, refinery.deployments_deployment_path(deployment), t('.view_live_html')) %>
+    <%= action_icon(:edit,    refinery.edit_deployments_admin_deployment_path(deployment), t('.edit') ) %>
+    <%= action_icon(:delete,  refinery.deployments_admin_deployment_path(deployment), t('.delete'),
+      { class: "cancel confirm-delete",
+        data: {confirm: t('message',  scope: 'refinery.admin.delete', title: deployment.name_of_host)}}  ) %>
+  </span>
+</li>

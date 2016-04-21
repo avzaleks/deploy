@@ -1,0 +1,34 @@
+en:
+  refinery:
+    plugins:
+      deployments:
+        title: Deployments
+    deployments:
+      admin:
+        deployments:
+          actions:
+            create_new: Add New Deployment
+            reorder: Reorder Deployments
+            reorder_done: Done Reordering Deployments
+          records:
+            title: Deployments
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Deployments yet. Click "Add New Deployment" to add your first deployment.
+          deployment:
+            view_live_html: View this deployment live <br/><em>(opens in a new window)</em>
+            edit: Edit this deployment
+            delete: Remove this deployment forever
+      deployments:
+        show:
+          other: Other Deployments
+  activerecord:
+    attributes:
+      'refinery/deployments/deployment':
+        name_of_host: Name Of Host
+        ssh_port: Ssh Port
+        name_of_user: Name Of User
+        user_password: User Password
+        name_of_application: Name Of Application
+        path_for_deploy: Path For Deploy
+        unicorn_or_puma: Unicorn Or Puma
+        capistrano_or_mina: Capistrano Or Mina

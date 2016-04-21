@@ -1,0 +1,34 @@
+tr:
+  refinery:
+    plugins:
+      deployments:
+        title: Deployments
+    deployments:
+      admin:
+        deployments:
+          actions:
+            create_new: Yeni Ekle Deployment
+            reorder: Tekrar sirala Deployments
+            reorder_done: Tekrar siralama tamamlandiDeployments
+          records:
+            title: Deployments
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Deployments yok henuz.  Tikla "Yeni Ekle Deployment" eklemek senin ilk deployment.
+          deployment:
+            view_live_html: Bunu canlu deployment goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle deployment
+            delete: Bunu Sil deployment sonsuza dek
+      deployments:
+        show:
+          other: Diger Deployments
+  activerecord:
+    attributes:
+      'refinery/deployments/deployment':
+        name_of_host: Name Of Host
+        ssh_port: Ssh Port
+        name_of_user: Name Of User
+        user_password: User Password
+        name_of_application: Name Of Application
+        path_for_deploy: Path For Deploy
+        unicorn_or_puma: Unicorn Or Puma
+        capistrano_or_mina: Capistrano Or Mina

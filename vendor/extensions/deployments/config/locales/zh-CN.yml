@@ -1,0 +1,36 @@
+zh-CN:
+  refinery:
+    plugins:
+      deployments:
+        title: Deployments
+    deployments:
+      admin:
+        deployments:
+          actions:
+            create_new: 建立新的 Deployment
+            reorder: 对 Deployments 重新排序
+            reorder_done: 对 Deployments 的重新排序结束
+          records:
+            title: Deployments
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Deployments yet. Click "Add New Deployment" to add your first deployment.
+            no_items_yet: 目前没有 Deployments . 点击 "Add New Deployment" 创建一个deployment.
+          deployment:
+            view_live_html: 查看 deployment 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 deployment
+            delete: 永久删除 deployment
+      deployments:
+        show:
+          other: 其他 Deployments
+  activerecord:
+    attributes:
+      'refinery/deployments/deployment':
+        name_of_host: Name Of Host
+        ssh_port: Ssh Port
+        name_of_user: Name Of User
+        user_password: User Password
+        name_of_application: Name Of Application
+        path_for_deploy: Path For Deploy
+        unicorn_or_puma: Unicorn Or Puma
+        capistrano_or_mina: Capistrano Or Mina

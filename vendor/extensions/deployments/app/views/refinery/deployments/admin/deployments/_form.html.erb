@@ -1,0 +1,171 @@
+<style>
+  .maxl{
+    margin:0px ;
+  }
+  .inline{
+    display: inline-block;
+  }
+  .inline + .inline{
+    margin-left:10px;
+  }
+  .radio{
+    color:#999;
+    font-size:15px;
+    position:relative;
+  }
+  .radio span{
+    position:relative;
+    padding-left:20px;
+  }
+  .radio span:after{
+    content:'';
+    width:15px;
+    height:15px;
+    border:3px solid;
+    position:absolute;
+    left:0;
+    top:1px;
+    border-radius:100%;
+    -ms-border-radius:100%;
+    -moz-border-radius:100%;
+    -webkit-border-radius:100%;
+    box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+  }
+  .radio input[type="radio"]{
+    cursor: pointer;
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index: 1;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+  }
+  .radio input[type="radio"]:checked + span{
+    color:#0B8;
+  }
+  .radio input[type="radio"]:checked + span:before{
+    content:'';
+    width:5px;
+    height:5px;
+    position:absolute;
+    background:#0B8;
+    left:5px;
+    top:6px;
+    border-radius:100%;
+    -ms-border-radius:100%;
+    -moz-border-radius:100%;
+    -webkit-border-radius:100%;
+  }
+</style>
+
+
+<%= form_for [refinery, :deployments_admin, @deployment] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @deployment,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :repo_url -%>
+    <%= f.text_field :repo_url, :class => 'larger widest' -%>
+  </div>
+
+
+
+
+  <div class='field'>
+    <%= f.label :name_of_host_for_deploy -%>
+    <%= f.text_field :name_of_host, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :ssh_port -%>
+    <%= f.text_field :ssh_port -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :name_of_user -%>
+    <%= f.text_field :name_of_user -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :user_password -%>
+    <%= f.text_field :user_password -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :name_of_application -%>
+    <%= f.text_field :name_of_application -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :path_for_deploy -%>
+    <%= f.text_field :path_for_deploy -%>
+  </div>
+
+  <!--<div class='field'>-->
+    <!--<%#= f.label :unicorn_or_puma -%>-->
+    <!--<%#= f.text_field :unicorn_or_puma -%>-->
+  <!--</div>-->
+
+  <!--<div class='field'>-->
+    <!--<%#= f.label :capistrano_or_mina -%>-->
+    <!--<%#= f.text_field :capistrano_or_mina -%>-->
+  <!--</div>-->
+-------------------------------------------------------------------
+
+   <div class="chouse_server">
+    <span class='label_with_help'>
+      <%= f.label :unicorn_or_puma, 'Chouse server' %>
+    </span>
+      <div class="maxl">
+        <label class="radio inline">
+          <%= f.radio_button :unicorn_or_puma, 'unicorn' %>
+          <span> Unicorn </span>
+        </label>
+        <label class="radio inline">
+          <%= f.radio_button :unicorn_or_puma,'puma' %>
+          <span> Puma </span>
+        </label>
+      </div>
+    </div>
+
+-------------------------------------------------------------------
+
+    <div class="chouse_deploy">
+    <span class='label_with_help'>
+      <%= f.label :capistrano_or_mina, 'Chouse deploy system' %>
+    </span>
+      <div class="maxl">
+        <label class="radio inline">
+          <%= f.radio_button :capistrano_or_mina, 'capistrano' %>
+          <span> Capistrano </span>
+        </label>
+        <label class="radio inline">
+          <%= f.radio_button :capistrano_or_mina,'mina' %>
+          <span> Mina </span>
+        </label>
+      </div>
+    </div>
+------------------------------------------------------------------
+
+
+
+
+
+
+
+
+    <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.deployments.admin.deployments.deployment'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @deployment.name_of_host) -%>
+<% end -%>
